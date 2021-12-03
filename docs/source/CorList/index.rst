@@ -1,4 +1,5 @@
-
+CorList
+-------------
 .. toctree::
    :maxdepth: 2
    :hidden:
