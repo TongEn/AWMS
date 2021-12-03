@@ -2,12 +2,12 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Moci Awms'
+copyright = '2021, Moci'
+author = 'Moci'
 
 release = '0.1'
-version = '0.1.0'
+version = 'TestingVersion'
 
 # -- General configuration
 
