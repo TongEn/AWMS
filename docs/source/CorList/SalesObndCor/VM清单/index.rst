@@ -2,7 +2,7 @@ VM清单
 ============
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 4
    :hidden:
    :numbered:
    :caption: VM清单
