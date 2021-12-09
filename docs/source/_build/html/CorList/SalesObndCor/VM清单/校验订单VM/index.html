@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2. 校验订单VM【CheckBatchVm】 &mdash; Moci Awms 0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="3. 订单出货优先序拆分Vm【PriorityVm】" href="../PriorityVm/Prioritylist%E7%94%9F%E6%88%90VM.html" />
+    <link rel="prev" title="1. 初始化【InitVm】" href="../INITVM/%E5%88%9D%E5%A7%8B%E5%8C%96Vm.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Moci Awms
+          </a>
+              <div class="version">
+                TestingVersion
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">前端开发:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/index.html">前端开发</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">环境:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E7%8E%AF%E5%A2%83/index.html">开发环境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E7%8E%AF%E5%A2%83/index.html#id2">测试环境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E7%8E%AF%E5%A2%83/index.html#id3">生产环境</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">架构图:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E6%9E%B6%E6%9E%84%E5%9B%BE/index.html">后端架构图</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">规范:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E8%A7%84%E8%8C%83/index.html">规范</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Cor清单:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">CorList</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../CorManager/index.html">CorManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../SalesOrderCor/index.html">SalesOrderCor</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">SalesObndCor</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../%E6%97%B6%E5%BA%8F%E5%9B%BE/%E6%97%B6%E5%BA%8F%E5%9B%BE.html">时序图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../%E7%8A%B6%E6%80%81%E5%9B%BE/%E7%8A%B6%E6%80%81%E5%9B%BE.html">状态图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../API%E6%8E%A5%E5%8F%A3/Topics.html">API接口</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">VM清单</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../INITVM/%E5%88%9D%E5%A7%8B%E5%8C%96Vm.html">1. 初始化【InitVm】</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">2. 校验订单VM【CheckBatchVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PriorityVm/Prioritylist%E7%94%9F%E6%88%90VM.html">3. 订单出货优先序拆分Vm【PriorityVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Aggregate/Aggregate.html">4. 订单汇总Vm【AggregateVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%80%BB%E9%87%8F%E4%BF%9D%E7%95%99VM/%E6%80%BB%E9%87%8F%E4%BF%9D%E7%95%99VM.html">5. 总量保留Vm【InventoryReservationVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%88%AA%E5%8D%95%E8%B0%83%E5%9B%9E%E5%8D%95VM/index.html">6. 截单调回单生成VM【PreemptionShiftVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E5%88%86%E9%87%8F%E4%BF%9D%E7%95%99VM/%E5%88%86%E9%87%8F%E4%BF%9D%E7%95%99VM.html">7. 分量保留Vm【InventoryDetailReservationVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E7%89%A9%E6%B5%81%E5%87%BA%E8%B4%A7%E5%8D%95VM/%E7%89%A9%E6%B5%81%E5%87%BA%E8%B4%A7%E5%8D%95VM.html">8. 物流出货单【OutboundForm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E8%A1%A5%E8%B4%A7%E5%8D%95VM/index.html">9. 截单补货单【SupplementShiftForm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%8B%A3%E8%B4%A7%E5%8D%95VM/%E6%8B%A3%E8%B4%A7%E5%8D%95VM.html">10. 拣货单【PickForm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%B1%87%E6%80%BB%E6%8B%A3%E8%B4%A7%E5%8D%95VM/%E6%B1%87%E6%80%BB%E6%8B%A3%E8%B4%A7%E5%8D%95VM.html">11. 汇总拣货单【SumPickForm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%92%AD%E7%A7%8D%E5%8D%95VM/%E6%92%AD%E7%A7%8D%E5%8D%95VM.html">12. 播种单【SeedForm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%89%98%E8%BF%90%E5%8D%95/%E6%89%98%E8%BF%90%E5%8D%95.html">13. 托运单【?】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%88%AA%E5%8D%95%E6%81%A2%E5%A4%8D/%E6%88%AA%E5%8D%95%E6%81%A2%E5%A4%8D.html">14. 截单恢复VM【SalesObndRecoverVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%88%AA%E5%8D%95%E8%BF%98%E5%8E%9F/%E6%88%AA%E5%8D%95%E8%BF%98%E5%8E%9F.html">15. 截单还原VM【SalesObndReStoreVm】</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../InventoryCor/index.html">InventoryCor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../PreemptionShiftCor/index.html">PreemptionShiftCor</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Moci Awms</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../index.html">CorList</a> &raquo;</li>
+          <li><a href="../../index.html">SalesObndCor</a> &raquo;</li>
+          <li><a href="../index.html">VM清单</a> &raquo;</li>
+      <li><span class="section-number">2. </span>校验订单VM【CheckBatchVm】</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/CorList/SalesObndCor/VM清单/校验订单VM/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vmcheckbatchvm">
+<h1><span class="section-number">2. </span>校验订单VM【CheckBatchVm】<a class="headerlink" href="#vmcheckbatchvm" title="Permalink to this headline"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>订单COR会对订单会进行基础校验和过滤，截单时不再进行订单基础校验</p>
+</div>
+<p>1.校验是否订单LIST是否为空【CheckListExistVistor】</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&#39;沒有出貨單需要截單!&#39;</span>
+<span class="n">dbo</span><span class="o">.</span><span class="n">FN_SHARE_GETMESSAGE</span><span class="p">(</span><span class="s1">&#39;F0402M003&#39;</span><span class="p">,</span><span class="nd">@PI_LANG</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>2.校验出貨暫存區儲位是否存在【CheckOutTempSpacecellExistVistor】</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&#39;出貨暫存區儲位有{0}個,請檢查！&#39;</span>
+<span class="n">dbo</span><span class="o">.</span><span class="n">FN_SHARE_GETMESSAGE</span><span class="p">(</span><span class="s1">&#39;CL00M061&#39;</span><span class="p">,</span><span class="nd">@PI_LANG</span><span class="p">)</span><span class="o">+</span><span class="n">replace</span><span class="p">(</span><span class="n">dbo</span><span class="o">.</span><span class="n">FN_SHARE_GETMESSAGE</span><span class="p">(</span><span class="s1">&#39;F0302M023&#39;</span><span class="p">,</span><span class="nd">@PI_LANG</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="p">,</span><span class="n">CONVERT</span><span class="p">(</span><span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span><span class="nd">@CNT</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>3.校验商品是否已停用【CheckProductEnableVistor】</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#商品[{0}]已停用，不允許截單!</span>
+<span class="n">replace</span><span class="p">(</span><span class="n">dbo</span><span class="o">.</span><span class="n">FN_SHARE_GETMESSAGE</span><span class="p">(</span><span class="s1">&#39;F0402M20&#39;</span><span class="p">,</span><span class="nd">@PI_LANG</span><span class="p">),</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="p">,</span><span class="nd">@PRODUCTNO</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>4.原箱出货的品种，出货量必须以箱为单位出货【CheckOriBoxQtyVistor】</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#存在沒有按原箱量的倍數出貨的原箱出貨品種!</span>
+<span class="n">dbo</span><span class="o">.</span><span class="n">FN_SHARE_GETMESSAGE</span><span class="p">(</span><span class="s1">&#39;F0402M019&#39;</span><span class="p">,</span><span class="nd">@PI_LANG</span><span class="p">)</span> <span class="o">+</span><span class="s1">&#39;[&#39;</span><span class="o">+</span><span class="nd">@ORDNO</span><span class="o">+</span><span class="s1">&#39;]&#39;</span>
+</pre></div>
+</div>
+<p>5.校验直配暫存區儲位是否存在【CheckSeedTempSpacecellExistVistor】</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#直配暫存區儲位有{0}個,請檢查！</span>
+<span class="n">dbo</span><span class="o">.</span><span class="n">FN_SHARE_GETMESSAGE</span><span class="p">(</span><span class="s1">&#39;CL00M060&#39;</span><span class="p">,</span> <span class="nd">@PI_LANG</span><span class="p">)</span> <span class="o">+</span> <span class="n">REPLACE</span><span class="p">(</span><span class="n">dbo</span><span class="o">.</span><span class="n">FN_SHARE_GETMESSAGE</span><span class="p">(</span><span class="s1">&#39;F0302M023&#39;</span><span class="p">,</span> <span class="nd">@PI_LANG</span><span class="p">),</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">CONVERT</span><span class="p">(</span><span class="n">VARCHAR</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span> <span class="nd">@CNT</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>6.校验客户是否设定路线【CheckCustomerRouteExistVistor】</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#客户[{0}]未设定路线，不允许截单!</span>
+<span class="n">REPLACE</span><span class="p">(</span><span class="n">dbo</span><span class="o">.</span><span class="n">FN_SHARE_GETMESSAGE</span><span class="p">(</span><span class="s1">&#39;F0402M024&#39;</span><span class="p">,</span> <span class="nd">@PI_LANG</span><span class="p">),</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nd">@CUSTOMNO</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>7.校验客户是否设定播种储位【CheckCustomerSeedSpacecellExistVistor】</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#客戶[{0}]未設定播種儲位，不允許截單!</span>
+<span class="n">REPLACE</span><span class="p">(</span><span class="n">dbo</span><span class="o">.</span><span class="n">FN_SHARE_GETMESSAGE</span><span class="p">(</span><span class="s1">&#39;F0402M026&#39;</span><span class="p">,</span> <span class="nd">@PI_LANG</span><span class="p">),</span> <span class="s1">&#39;</span><span class="si">{0}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="nd">@CUSTOMNO</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../INITVM/%E5%88%9D%E5%A7%8B%E5%8C%96Vm.html" class="btn btn-neutral float-left" title="1. 初始化【InitVm】" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../PriorityVm/Prioritylist%E7%94%9F%E6%88%90VM.html" class="btn btn-neutral float-right" title="3. 订单出货优先序拆分Vm【PriorityVm】" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Moci.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
