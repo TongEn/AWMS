@@ -124,27 +124,27 @@
 <h1><span class="section-number">11. </span>汇总拣货单【SumPickForm】<a class="headerlink" href="#sumpickform" title="Permalink to this headline"></a></h1>
 <p>汇总拣货单 <strong>生成</strong> 、 <strong>查询</strong> 、 <strong>拣货</strong> 、 <strong>截单还原</strong>  相关VM和Vistor</p>
 <section id="vmsumpickformgeneratevm">
-<h2><span class="section-number">11.1. </span>1. 汇总拣货单生成VM【SumPickFormGenerateVm】<a class="headerlink" href="#vmsumpickformgeneratevm" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">11.1. </span>汇总拣货单生成VM【SumPickFormGenerateVm】<a class="headerlink" href="#vmsumpickformgeneratevm" title="Permalink to this headline"></a></h2>
 <section id="id1">
-<h3><span class="section-number">11.1.1. </span>1.1 按商品温层拆分<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">11.1.1. </span>按商品温层拆分<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>拣货单生成依商品温层拆单</p>
 </div></blockquote>
 </section>
 <section id="id2">
-<h3><span class="section-number">11.1.2. </span>1.2 按拣货单类型成箱、零散拆分<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">11.1.2. </span>按拣货单类型成箱、零散拆分<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>拣货单生成依拣货单类型成箱、零散拆单</p>
 </div></blockquote>
 </section>
 <section id="id3">
-<h3><span class="section-number">11.1.3. </span>1.3 按拣货储位分区拆分<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">11.1.3. </span>按拣货储位分区拆分<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>拣货单生成依拣货储位分区拆单</p>
 </div></blockquote>
 </section>
 <section id="id4">
-<h3><span class="section-number">11.1.4. </span>1.4 按异形品拆分<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">11.1.4. </span>按异形品拆分<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>拣货单生成依异形品拆单</p>
 </div></blockquote>
@@ -156,13 +156,13 @@
 </section>
 </section>
 <section id="vmsumpickformqueryvm">
-<h2><span class="section-number">11.2. </span>2. 汇总拣货单查询VM【SumPickFormQueryVm】<a class="headerlink" href="#vmsumpickformqueryvm" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">11.2. </span>汇总拣货单查询VM【SumPickFormQueryVm】<a class="headerlink" href="#vmsumpickformqueryvm" title="Permalink to this headline"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>提供当前截单批次的汇总拣货单资料查询</p>
 </div>
 <section id="vistor">
-<h3><span class="section-number">11.2.1. </span>2.1 筛选Vistor清单<a class="headerlink" href="#vistor" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">11.2.1. </span>筛选Vistor清单<a class="headerlink" href="#vistor" title="Permalink to this headline"></a></h3>
 <ol class="arabic simple">
 <li><p>仓库编号</p></li>
 <li><p>截单批次</p></li>
@@ -174,29 +174,27 @@
 </section>
 </section>
 <section id="vmsumpickformpickvm">
-<h2><span class="section-number">11.3. </span>7.  汇总拣货单拣货VM【SumPickFormPickVm】<a class="headerlink" href="#vmsumpickformpickvm" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">11.3. </span>汇总拣货单拣货VM【SumPickFormPickVm】<a class="headerlink" href="#vmsumpickformpickvm" title="Permalink to this headline"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<ol class="arabic simple">
-<li><p>提供汇总拣货单资料实际拣货数量修改功能</p></li>
-<li><p>当部分明细已使用RF作业拣货时，只允许修改尚未作业之明细</p></li>
-<li><p>WMS与RF同时拣货需要进行锁单</p></li>
-</ol>
+<p>1.   提供汇总拣货单资料实际拣货数量修改功能
+1.   当部分明细已使用RF作业拣货时，只允许修改尚未作业之明细
+2.   WMS与RF同时拣货需要进行锁单</p>
 </div>
 <section id="wms">
-<h3><span class="section-number">11.3.1. </span>3.1 WMS拣货修改<a class="headerlink" href="#wms" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">11.3.1. </span>WMS拣货修改<a class="headerlink" href="#wms" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>WMS进行拣货作业修改</p>
 </div></blockquote>
 </section>
 <section id="id5">
-<h3><span class="section-number">11.3.2. </span>3.2 WMS拣货确认<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">11.3.2. </span>WMS拣货确认<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>WMS进行拣货作业确认</p>
 </div></blockquote>
 </section>
 <section id="rf">
-<h3><span class="section-number">11.3.3. </span>3.3 RF拣货<a class="headerlink" href="#rf" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">11.3.3. </span>RF拣货<a class="headerlink" href="#rf" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>每笔拣货明细只允许拣一次</p></li>
@@ -206,15 +204,15 @@
 </section>
 </section>
 <section id="vmsumpickformrestorevm">
-<h2><span class="section-number">11.4. </span>4. 汇总拣货单截单还原VM【SumPickFormRestoreVm】<a class="headerlink" href="#vmsumpickformrestorevm" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">11.4. </span>汇总拣货单截单还原VM【SumPickFormRestoreVm】<a class="headerlink" href="#vmsumpickformrestorevm" title="Permalink to this headline"></a></h2>
 <section id="id6">
-<h3><span class="section-number">11.4.1. </span>4.1 汇总拣货单截单还原是否允许判定<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">11.4.1. </span>汇总拣货单截单还原是否允许判定<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>是否已经进行了拣货</p>
 </div></blockquote>
 </section>
 <section id="id7">
-<h3><span class="section-number">11.4.2. </span>4.2 汇总拣货单截单还原确认<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<h3><span class="section-number">11.4.2. </span>汇总拣货单截单还原确认<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
 <blockquote>
 <div><p>截单还原确认：拣货单取消</p>
 </div></blockquote>
