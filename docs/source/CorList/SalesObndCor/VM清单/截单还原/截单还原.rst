@@ -10,4 +10,4 @@
 
 :doc:`/CorList/SalesObndCor/VM清单/汇总拣货单VM/汇总拣货单VM`
 
-:ref:`播种单截单还原VM <CorList/SalesObndCor/VM清单/播种单VM/播种单VM:播种单截单还原VM【SeedFormRestoreVm】>`
+:ref:`播种单截单还原VM <CorList/SalesObndCor/VM%E6%B8%85%E5%8D%95/%E6%92%AD%E7%A7%8D%E5%8D%95VM/%E6%92%AD%E7%A7%8D%E5%8D%95VM:%E6%92%AD%E7%A7%8D%E5%8D%95%E6%88%AA%E5%8D%95%E8%BF%98%E5%8E%9FVM%E3%80%90SeedFormRestoreVm%E3%80%91>`
