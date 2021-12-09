@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11. 汇总拣货单【SumPickForm】 &mdash; Moci Awms 0.1 documentation</title>
+      <link rel="stylesheet" href="../../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../../" id="documentation_options" src="../../../../_static/documentation_options.js"></script>
+        <script src="../../../../_static/jquery.js"></script>
+        <script src="../../../../_static/underscore.js"></script>
+        <script src="../../../../_static/doctools.js"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="12. 播种单【SeedForm】" href="../%E6%92%AD%E7%A7%8D%E5%8D%95VM/%E6%92%AD%E7%A7%8D%E5%8D%95VM.html" />
+    <link rel="prev" title="10. 拣货单【PickForm】" href="../%E6%8B%A3%E8%B4%A7%E5%8D%95VM/%E6%8B%A3%E8%B4%A7%E5%8D%95VM.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../../index.html" class="icon icon-home"> Moci Awms
+          </a>
+              <div class="version">
+                TestingVersion
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">前端开发:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/index.html">前端开发</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">环境:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E7%8E%AF%E5%A2%83/index.html">开发环境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E7%8E%AF%E5%A2%83/index.html#id2">测试环境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E7%8E%AF%E5%A2%83/index.html#id3">生产环境</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">架构图:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E6%9E%B6%E6%9E%84%E5%9B%BE/index.html">后端架构图</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">规范:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../%E8%A7%84%E8%8C%83/index.html">规范</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Cor清单:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">CorList</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../../CorManager/index.html">CorManager</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../SalesOrderCor/index.html">SalesOrderCor</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">SalesObndCor</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../%E6%97%B6%E5%BA%8F%E5%9B%BE/%E6%97%B6%E5%BA%8F%E5%9B%BE.html">时序图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../%E7%8A%B6%E6%80%81%E5%9B%BE/%E7%8A%B6%E6%80%81%E5%9B%BE.html">状态图</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../API%E6%8E%A5%E5%8F%A3/Topics.html">API接口</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">VM清单</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../INITVM/%E5%88%9D%E5%A7%8B%E5%8C%96Vm.html">1. 初始化【InitVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%A0%A1%E9%AA%8C%E8%AE%A2%E5%8D%95VM/index.html">2. 校验订单VM【CheckBatchVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../PriorityVm/Prioritylist%E7%94%9F%E6%88%90VM.html">3. 订单出货优先序拆分Vm【PriorityVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../Aggregate/Aggregate.html">4. 订单汇总Vm【AggregateVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%80%BB%E9%87%8F%E4%BF%9D%E7%95%99VM/%E6%80%BB%E9%87%8F%E4%BF%9D%E7%95%99VM.html">5. 总量保留Vm【InventoryReservationVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%88%AA%E5%8D%95%E8%B0%83%E5%9B%9E%E5%8D%95VM/index.html">6. 截单调回单生成VM【PreemptionShiftVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E5%88%86%E9%87%8F%E4%BF%9D%E7%95%99VM/%E5%88%86%E9%87%8F%E4%BF%9D%E7%95%99VM.html">7. 分量保留Vm【InventoryDetailReservationVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E7%89%A9%E6%B5%81%E5%87%BA%E8%B4%A7%E5%8D%95VM/%E7%89%A9%E6%B5%81%E5%87%BA%E8%B4%A7%E5%8D%95VM.html">8. 物流出货单【OutboundForm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E8%A1%A5%E8%B4%A7%E5%8D%95VM/index.html">9. 截单补货单【SupplementShiftForm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%8B%A3%E8%B4%A7%E5%8D%95VM/%E6%8B%A3%E8%B4%A7%E5%8D%95VM.html">10. 拣货单【PickForm】</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">11. 汇总拣货单【SumPickForm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%92%AD%E7%A7%8D%E5%8D%95VM/%E6%92%AD%E7%A7%8D%E5%8D%95VM.html">12. 播种单【SeedForm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%89%98%E8%BF%90%E5%8D%95/%E6%89%98%E8%BF%90%E5%8D%95.html">13. 托运单【?】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%88%AA%E5%8D%95%E6%81%A2%E5%A4%8D/%E6%88%AA%E5%8D%95%E6%81%A2%E5%A4%8D.html">14. 截单恢复VM【SalesObndRecoverVm】</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../%E6%88%AA%E5%8D%95%E8%BF%98%E5%8E%9F/%E6%88%AA%E5%8D%95%E8%BF%98%E5%8E%9F.html">15. 截单还原VM【SalesObndReStoreVm】</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../InventoryCor/index.html">InventoryCor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../PreemptionShiftCor/index.html">PreemptionShiftCor</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Moci Awms</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../../index.html">CorList</a> &raquo;</li>
+          <li><a href="../../index.html">SalesObndCor</a> &raquo;</li>
+          <li><a href="../index.html">VM清单</a> &raquo;</li>
+      <li><span class="section-number">11. </span>汇总拣货单【SumPickForm】</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/CorList/SalesObndCor/VM清单/汇总拣货单VM/汇总拣货单VM.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sumpickform">
+<h1><span class="section-number">11. </span>汇总拣货单【SumPickForm】<a class="headerlink" href="#sumpickform" title="Permalink to this headline"></a></h1>
+<p>汇总拣货单 <strong>生成</strong> 、 <strong>查询</strong> 、 <strong>拣货</strong> 、 <strong>截单还原</strong>  相关VM和Vistor</p>
+<section id="vmsumpickformgeneratevm">
+<h2><span class="section-number">11.1. </span>1. 汇总拣货单生成VM【SumPickFormGenerateVm】<a class="headerlink" href="#vmsumpickformgeneratevm" title="Permalink to this headline"></a></h2>
+<section id="id1">
+<h3><span class="section-number">11.1.1. </span>1.1 按商品温层拆分<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><p>拣货单生成依商品温层拆单</p>
+</div></blockquote>
+</section>
+<section id="id2">
+<h3><span class="section-number">11.1.2. </span>1.2 按拣货单类型成箱、零散拆分<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><p>拣货单生成依拣货单类型成箱、零散拆单</p>
+</div></blockquote>
+</section>
+<section id="id3">
+<h3><span class="section-number">11.1.3. </span>1.3 按拣货储位分区拆分<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><p>拣货单生成依拣货储位分区拆单</p>
+</div></blockquote>
+</section>
+<section id="id4">
+<h3><span class="section-number">11.1.4. </span>1.4 按异形品拆分<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><p>拣货单生成依异形品拆单</p>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>截单时自动汇总或截单后人工汇总</p>
+<p>截单后人工汇总可对不同截单批次的拣货单进行汇总</p>
+</div>
+</section>
+</section>
+<section id="vmsumpickformqueryvm">
+<h2><span class="section-number">11.2. </span>2. 汇总拣货单查询VM【SumPickFormQueryVm】<a class="headerlink" href="#vmsumpickformqueryvm" title="Permalink to this headline"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>提供当前截单批次的汇总拣货单资料查询</p>
+</div>
+<section id="vistor">
+<h3><span class="section-number">11.2.1. </span>2.1 筛选Vistor清单<a class="headerlink" href="#vistor" title="Permalink to this headline"></a></h3>
+<ol class="arabic simple">
+<li><p>仓库编号</p></li>
+<li><p>截单批次</p></li>
+<li><p>汇总拣货单号</p></li>
+<li><p>流程状态</p></li>
+<li><p>建立日期</p></li>
+<li><p>商品编号</p></li>
+</ol>
+</section>
+</section>
+<section id="vmsumpickformpickvm">
+<h2><span class="section-number">11.3. </span>7.  汇总拣货单拣货VM【SumPickFormPickVm】<a class="headerlink" href="#vmsumpickformpickvm" title="Permalink to this headline"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>提供汇总拣货单资料实际拣货数量修改功能</p></li>
+<li><p>当部分明细已使用RF作业拣货时，只允许修改尚未作业之明细</p></li>
+<li><p>WMS与RF同时拣货需要进行锁单</p></li>
+</ol>
+</div>
+<section id="wms">
+<h3><span class="section-number">11.3.1. </span>3.1 WMS拣货修改<a class="headerlink" href="#wms" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><p>WMS进行拣货作业修改</p>
+</div></blockquote>
+</section>
+<section id="id5">
+<h3><span class="section-number">11.3.2. </span>3.2 WMS拣货确认<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><p>WMS进行拣货作业确认</p>
+</div></blockquote>
+</section>
+<section id="rf">
+<h3><span class="section-number">11.3.3. </span>3.3 RF拣货<a class="headerlink" href="#rf" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>每笔拣货明细只允许拣一次</p></li>
+<li><p>每笔拣货明细可拣多次</p></li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+<section id="vmsumpickformrestorevm">
+<h2><span class="section-number">11.4. </span>4. 汇总拣货单截单还原VM【SumPickFormRestoreVm】<a class="headerlink" href="#vmsumpickformrestorevm" title="Permalink to this headline"></a></h2>
+<section id="id6">
+<h3><span class="section-number">11.4.1. </span>4.1 汇总拣货单截单还原是否允许判定<a class="headerlink" href="#id6" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><p>是否已经进行了拣货</p>
+</div></blockquote>
+</section>
+<section id="id7">
+<h3><span class="section-number">11.4.2. </span>4.2 汇总拣货单截单还原确认<a class="headerlink" href="#id7" title="Permalink to this headline"></a></h3>
+<blockquote>
+<div><p>截单还原确认：拣货单取消</p>
+</div></blockquote>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../%E6%8B%A3%E8%B4%A7%E5%8D%95VM/%E6%8B%A3%E8%B4%A7%E5%8D%95VM.html" class="btn btn-neutral float-left" title="10. 拣货单【PickForm】" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../%E6%92%AD%E7%A7%8D%E5%8D%95VM/%E6%92%AD%E7%A7%8D%E5%8D%95VM.html" class="btn btn-neutral float-right" title="12. 播种单【SeedForm】" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Moci.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

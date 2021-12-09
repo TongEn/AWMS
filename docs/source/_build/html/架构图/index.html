@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>后端架构 &mdash; Moci Awms 0.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="规范" href="../%E8%A7%84%E8%8C%83/index.html" />
+    <link rel="prev" title="开发环境" href="../%E7%8E%AF%E5%A2%83/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Moci Awms
+          </a>
+              <div class="version">
+                TestingVersion
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">前端开发:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/index.html">前端开发</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">环境:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%8E%AF%E5%A2%83/index.html">开发环境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%8E%AF%E5%A2%83/index.html#id2">测试环境</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E7%8E%AF%E5%A2%83/index.html#id3">生产环境</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">架构图:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">后端架构图</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">平台技术架构</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">物流知识架构</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">運算架構</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">資料架構</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">规范:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E8%A7%84%E8%8C%83/index.html">规范</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Cor清单:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CorList/index.html">CorList</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Moci Awms</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>后端架构</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/架构图/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>后端架构<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<dl>
+<dt>AWMS</dt><dd><p>完整物流服務</p>
+<p>最先進技術平台</p>
+<p>最豐富物流知識</p>
+<p>最彈性物流運作</p>
+<p>最寬廣鍵值設計</p>
+</dd>
+</dl>
+<section id="id2">
+<h2>平台技术架构<a class="headerlink" href="#id2" title="Permalink to this headline"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Kubernetes (K8S) + Docker：雲運算及微服務</p>
+<p>Kafka：訊息佇列 (message queue) 分散式運算</p>
+<p>Redis：內存資料庫 In-memory database 快速查詢</p>
+<p>mongoDB：長存資料庫 persistence database 長期儲存</p>
+</div>
+<dl>
+<dt>说明:</dt><dd><ol class="arabic">
+<li><p>Docker 間透過 Kafka 訊息交換啟動運算</p></li>
+<li><p>Docker 間透過 Redis 共享資料</p></li>
+<li><p>Redis資料的 Key 透過 Kafka 交換</p></li>
+<li><p>Docker 內部運算單元以 Akka 實作。初步包括下列Akka:</p>
+<blockquote>
+<div><p>4.0 每個 Cor 有一個 Akka ，作為 Cor 的控制器 CorController。負責分派所接到訊息的工作分派。</p>
+<p>4.1 Subscriber 是一個 Akka，將接到的訊息交CorController。</p>
+<p>4.2 Publisher 是一個 Akka，將 CorController 傳來的訊息發布給 Topic。</p>
+<p>4.3 每個 VM  是一個 Akka，作為 VM 的控制器 VMController。 CorController接到的訊息交給Akka 所接到的訊息，由 VM 的控制器 VMController 處理。</p>
+<p>4.4 磁碟 IO  是一個 Akka</p>
+<p>4.5 Subscriber 接到訊息後將訊息交給 CorController，CorController 再將訊息傳給 VMController</p>
+</div></blockquote>
+</li>
+</ol>
+</dd>
+</dl>
+<img alt="../_images/整合微服務.png" src="../_images/整合微服務.png" />
+<img alt="../_images/內存資料架構.png" src="../_images/內存資料架構.png" />
+<img alt="../_images/資料庫架構.png" src="../_images/資料庫架構.png" />
+<img alt="../_images/平台技術架構.png" src="../_images/平台技術架構.png" />
+</section>
+<section id="id3">
+<h2>物流知识架构<a class="headerlink" href="#id3" title="Permalink to this headline"></a></h2>
+<section id="id4">
+<h3>運算架構<a class="headerlink" href="#id4" title="Permalink to this headline"></a></h3>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol class="arabic simple">
+<li><p>階層式運算架構</p></li>
+<li><p>積木式組合</p></li>
+<li><p>編輯式管理</p></li>
+</ol>
+</div>
+<dl>
+<dt>運算架構頂層</dt><dd><p>物流知識鏈</p>
+<p>包含一組最高層物流知識節點 (Chain of Responsibility，Cor)</p>
+</dd>
+<dt>積木式組合</dt><dd><dl class="simple">
+<dt>每一個物流知識節點 (Cor)</dt><dd><ol class="arabic simple">
+<li><p>拆分成數十個到數百個運算單元 (visitor)</p></li>
+<li><p>功能相近的運算單元合成一組，交由一個運算管理員 (visitor manager) 管理</p></li>
+</ol>
+</dd>
+</dl>
+</dd>
+</dl>
+<p>Cor、VM、Visitor 共同組成物流運算架構</p>
+<dl>
+<dt>運算架構與微服務</dt><dd><p>一個物流知識節點 (Cor) 對應一個微服務(microservice)</p>
+<p>一個 Cor 管理多個 VM</p>
+<p>一個 VM 管理多個 visitor</p>
+<p>Cor、VM、visitor 均可透過文字，設定其啟動時所需的參數</p>
+</dd>
+</dl>
+</section>
+<section id="id5">
+<h3>資料架構<a class="headerlink" href="#id5" title="Permalink to this headline"></a></h3>
+<p>1 以鍵值對(key-value pair，KVP) 紀錄物流的資料內容</p>
+<p>內存資料庫 Redis 與長存資料庫 mongoDB 高度整合</p>
+<dl>
+<dt>彈性化鍵值設計</dt><dd><p>透過可編輯的參數和流程，實現可編輯的物流系統
+鍵值設計是物流知識「資料面」的具體實現</p>
+<dl>
+<dt>依據下列條件設計鍵值</dt><dd><p>物流營運商</p>
+<p>物流中心</p>
+<p>交易營運商</p>
+<p>商品供應商</p>
+<p>商品製造商</p>
+<p>商品：時效控制、溫度控制、顏色尺寸控制、政府監管控制、外型包裝控制</p>
+<dl>
+<dt>合約：</dt><dd><p>商流合約： 採購合約、銷售合約、退貨合約、廠退合約等等</p>
+<p>物流作業合約：揀貨單、補貨單、調整單、加工單、檢驗單、託運單、報廢單等等</p>
+</dd>
+</dl>
+<p>促銷：指定時段、指定客層、指定商品、指定區域、指定金額、指定數量</p>
+</dd>
+</dl>
+<p>鍵值對是搭配 Redis + mongoDB 的最佳選擇</p>
+<p>呈現豐富的物流資料</p>
+<p>實現高速讀寫機制</p>
+<p>落實物流高彈性應用</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../%E7%8E%AF%E5%A2%83/index.html" class="btn btn-neutral float-left" title="开发环境" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../%E8%A7%84%E8%8C%83/index.html" class="btn btn-neutral float-right" title="规范" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, Moci.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
