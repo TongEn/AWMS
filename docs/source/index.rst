@@ -45,14 +45,26 @@ AWMS平台文档库
    :hidden:
    :caption: 规范:
 
-   规范/index
+   .. 规范/index
+   规范/名词缩写/index
+   规范/开发规范/index  
+   规范/GitLab规范/index
+   规范/Topics命名规范/index
+   规范/状态移转编码规范/index
+   规范/Redis规范/index
 
 .. toctree::
    :maxdepth: 2
    :hidden:
    :caption: Cor清单:
 
-   CorList/index
+   .. CorList/index
+
+   CorList/CorManager/index
+   CorList/SalesOrderCor/index
+   CorList/SalesObndCor/index
+   CorList/InventoryCor/index
+   CorList/PreemptionShiftCor/index
   
    
    
